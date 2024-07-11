@@ -1,5 +1,7 @@
 ### This is my JAVASCRIPT AND REACT TUTORIAL WEBSITE. FOR EXPLANING ALL THE CONCEPTS OF JAVASCRIPT IN SIMPLE WORDS.
 
+Clone the project and run it to start exploring! Enjoy straightforward tutorials accompanied by practical programming code. I crafted this while advancing through Meta's <b>Advanced React</b> course on Coursera.
+
 ## What is Reactjs?
 Reactjs is an open-source, component based frontend javascript library for the view layer of the application. It is supported by Meta.
 
