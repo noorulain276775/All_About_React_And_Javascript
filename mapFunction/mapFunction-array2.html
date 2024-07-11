@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Items Display Tutorial</title>
+    <link rel="stylesheet" href="mapFunction.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="list-div">
+        <h1 style="color: black;">
+          Displaying Product Items Using JavaScript's `map` Method
+        </h1>
+        <p>
+          In this tutorial, we will learn how to use JavaScript's `map` function
+          to display a list of product items with their titles, categories, and
+          prices on a webpage. This is typically how we would handle data
+          received from a backend API in JSON format and render it dynamically
+          on the frontend.
+        </p>
+
+        <p>
+          When working with arrays, objects are often the most common type of
+          element you'll encounter. When fetching data from a third-party
+          source, such as an API, you typically receive more data than necessary
+          for your specific use case. The map method is particularly useful in
+          such scenarios as it allows you to selectively extract and transform
+          only the data you intend to display on your application's screen.
+          Notably, the map method always returns a new array based on the
+          transformations applied to each element during iteration. In
+          environments like JSX, commonly used in React applications, the map
+          function's versatility shines through, enabling developers to render
+          lists of diverse data types seamlessly.
+        </p>
+
+        <h2>1. Setting Up the HTML Structure</h2>
+        <p>
+          First, let's set up the basic HTML structure with a title and a
+          container to display our product items:
+        </p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Product Items Display&lt;/title&gt;
+    &lt;link rel="stylesheet" href="mapFunction.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="list-div"&gt;
+        &lt;h1&gt;Product Items&lt;/h1&gt;
+        &lt;div id="myDiv"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>2. Adding the JavaScript for Product Display</h2>
+        <p>
+          Next, let's add JavaScript to dynamically display the product items
+          inside the `myDiv` container:
+        </p>
+        <pre><code>&lt;script&gt;
+  // Define an array of product items
+  const productItems = [
+    {
+      title: "Washing Machine",
+      category: "Electronics",
+      price: 1500,
+    },
+    {
+      title: "Juicer",
+      category: "Electronics",
+      price: 500,
+    },
+    {
+      title: "T-shirt",
+      category: "Apparel",
+      price: 150,
+    },
+    {
+      title: "Jug and Glass set",
+      category: "Household",
+      price: 250,
+    },
+  ];
+
+  // Select the div where products will be displayed
+  const divElement = document.getElementById("myDiv");
+
+  // Use map function to create elements for each product item
+  productItems.map((item) =&gt; {
+    const itemDiv = document.createElement("div");
+    const itemTitle = document.createElement("p");
+    const itemCategory = document.createElement("p");
+    const itemPrice = document.createElement("p");
+
+    // Set text content for each element
+    itemTitle.textContent = `Title: ${item.title}`;
+    itemCategory.textContent = `Category: ${item.category}`;
+    itemPrice.textContent = `Price: $${item.price}`;
+
+    // Append elements to the item div
+    itemDiv.append(itemTitle);
+    itemDiv.append(itemCategory);
+    itemDiv.append(itemPrice);
+
+    // Append item div to the main container div
+    divElement.append(itemDiv);
+  });
+&lt;/script&gt;</code></pre>
+
+        <h2>3. Explanation of the Code</h2>
+        <p>
+          Here, we'll explain what each part of the code does and how it
+          achieves our goal of displaying product items:
+        </p>
+        <ul>
+          <li>
+            <h3>Defining Product Data</h3>
+            <p>
+              We start by defining an array `productItems` that contains
+              objects. Each object represents a product with properties like
+              `title`, `category`, and `price`.
+            </p>
+          </li>
+          <li>
+            <h3>Creating HTML Elements Dynamically</h3>
+            <p>
+              Using JavaScript's `map` function, we iterate over each `item` in
+              `productItems`. For each `item`, we create a `div` (`itemDiv`) and
+              `p` elements (`itemTitle`, `itemCategory`, `itemPrice`) to display
+              the product's details.
+            </p>
+          </li>
+          <li>
+            <h3>Setting Text Content</h3>
+            <p>
+              We set the text content of `itemTitle`, `itemCategory`, and
+              `itemPrice` to display the `title`, `category`, and `price` of
+              each product item, respectively.
+            </p>
+          </li>
+          <li>
+            <h3>Appending Elements to the DOM</h3>
+            <p>
+              Finally, we append `itemDiv` containing the product details to
+              `myDiv` in the HTML, which dynamically renders each product item
+              on the webpage.
+            </p>
+          </li>
+        </ul>
+
+        <h2>4. Final HTML Structure</h2>
+        <p>
+          Here's the complete HTML structure with the integrated JavaScript:
+        </p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Product Items Display&lt;/title&gt;
+    &lt;link rel="stylesheet" href="mapFunction.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="list-div"&gt;
+        &lt;h1&gt;Product Items&lt;/h1&gt;
+        &lt;div id="myDiv"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      const productItems = [
+        {
+          title: "Washing Machine",
+          category: "Electronics",
+          price: 1500,
+        },
+        {
+          title: "Juicer",
+          category: "Electronics",
+          price: 500,
+        },
+        {
+          title: "T-shirt",
+          category: "Apparel",
+          price: 150,
+        },
+        {
+          title: "Jug and Glass set",
+          category: "Household",
+          price: 250,
+        },
+      ];
+
+      const divElement = document.getElementById("myDiv");
+
+      productItems.map((item) =&gt; {
+        const itemDiv = document.createElement("div");
+        const itemTitle = document.createElement("p");
+        const itemCategory = document.createElement("p");
+        const itemPrice = document.createElement("p");
+
+        itemTitle.textContent = `Title: ${item.title}`;
+        itemCategory.textContent = `Category: ${item.category}`;
+        itemPrice.textContent = `Price: $${item.price}`;
+
+        itemDiv.append(itemTitle);
+        itemDiv.append(itemCategory);
+        itemDiv.append(itemPrice);
+
+        divElement.append(itemDiv);
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>
+          This tutorial demonstrates how to use JavaScript's `map` function to
+          dynamically display a list of product items on a webpage. Each product
+          item's title, category, and price are shown within separate `div`
+          elements created programmatically using JavaScript. This approach is
+          commonly used to handle and display data received from a backend API
+          in JSON format on the frontend.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

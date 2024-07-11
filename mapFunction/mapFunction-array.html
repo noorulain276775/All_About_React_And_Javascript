@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Function Tutorial</title>
+    <link rel="stylesheet" href="mapFunction.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Square Root of Numbers Using the `map` Function</h1>
+      <p>
+        In this tutorial, we will learn how to use JavaScript's
+        <code>map</code> function to calculate the square roots of an array of
+        numbers and display them in an HTML list.
+      </p>
+      <h3>What is JavaScript map method and Why it is used</h3>
+      <p>
+        JavaScript <code>map</code> method is used to transform a list, and a
+        list is a simple collection of elements
+      </p>
+      <ul>
+        <li>
+          <code>map()</code> creates a new array from calling a function for
+          every array element.
+        </li>
+        <li>
+          <code>map()</code> does not execute the function for empty elements.
+        </li>
+        <li><code>map()</code> does not change the original array.</li>
+      </ul>
+      <p>This is all about map function.</p>
+      <h2>Now below is the complete Guide how to use map method</h2>
+
+      <h3>1. Setting Up the HTML Structure</h3>
+      <p>
+        First, we set up a basic HTML structure with a title, a heading, and a
+        container for our list:
+      </p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Map Function Tutorial&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;div class="list-div"&gt;
+        &lt;h1&gt;Square Root of Numbers Using map Function&lt;/h1&gt;
+        &lt;ul id="myList"&gt;&lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3>2. Adding the JavaScript</h3>
+      <p>
+        Next, we add a <code>&lt;script&gt;</code> tag to include our JavaScript
+        code that performs the calculations:
+      </p>
+      <pre><code>&lt;script&gt;
+  const numbers = [4, 5, 6, 7, 8];
+  const listElement = document.getElementById('myList');
+
+  numbers.map((num) =&gt; {
+    const listItem = document.createElement('li');
+    listItem.textContent = Math.sqrt(num);
+    listElement.append(listItem);
+  });
+&lt;/script&gt;</code></pre>
+
+      <p>This script does the following:</p>
+      <ul>
+        <li>Defines an array of numbers.</li>
+        <li>
+          Selects the <code>&lt;ul&gt;</code> element with the ID
+          <code>myList</code>.
+        </li>
+        <li>
+          Uses the <code>map</code> function to iterate over each number in the
+          array.
+        </li>
+        <li>
+          Calculates the square root of each number using
+          <code>Math.sqrt()</code>.
+        </li>
+        <li>Creates a new <code>&lt;li&gt;</code> element for each result.</li>
+        <li>
+          Sets the text content of each <code>&lt;li&gt;</code> element to the
+          square root value.
+        </li>
+        <li>
+          Appends each <code>&lt;li&gt;</code> element to the
+          <code>&lt;ul&gt;</code>.
+        </li>
+      </ul>
+
+      <h3>3. Final HTML Structure</h3>
+      <p>Here's the final HTML structure with the script included:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Map Function Tutorial&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;div class="list-div"&gt;
+        &lt;h1&gt;Square Root of Numbers Using map Function&lt;/h1&gt;
+        &lt;ul id="myList"&gt;&lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      const numbers = [4, 5, 6, 7, 8];
+      const listElement = document.getElementById('myList');
+
+      numbers.map((num) =&gt; {
+        const listItem = document.createElement('li');
+        listItem.textContent = Math.sqrt(num);
+        listElement.append(listItem);
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <h1>Here is the Result of our code</h1>
+      <div class="list-div">
+        <div id="myList"></div>
+      </div>
+      <h2>Conclusion</h2>
+      <p>
+        With these steps, you've created a simple webpage that calculates and
+        displays the square roots of an array of numbers using JavaScript's
+        <code>map</code> function. This is a great way to understand how
+        <code>map</code> works and how to manipulate the DOM to display results
+        dynamically.
+      </p>
+    </div>
+    <script>
+      const numbers = [4,5,6,7,8]
+      numbers.map((num)=> {
+        const myList = document.getElementById('myList')
+        const listItem = document.createElement('p')
+        listItem.textContent = Math.sqrt(num)
+        myList.append(listItem)
+      })
+    </script>
+  </body>
+</html>

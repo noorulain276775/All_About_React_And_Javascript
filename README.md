@@ -1,3 +1,5 @@
+### This is my JAVASCRIPT AND REACT TUTORIAL WEBSITE. FOR EXPLANING ALL THE CONCEPTS OF JAVASCRIPT IN SIMPLE WORDS.
+
 ## What is Reactjs?
 Reactjs is an open-source, component based frontend javascript library for the view layer of the application. It is supported by Meta.
 
@@ -9,7 +11,7 @@ Reactjs utilizes a virtual DOM. The virtual DOM (Document Object Model) is a con
 - Only the parts of the real DOM that have actually changed are updated, minimizing the number of manipulations needed and improving performance.
 
 ## What is Javascript map function and How does it work?
-Javascript map method is used to transform a list, and list is a simple collection of elements (represents an array in javascript). Most common type of an element has in the array is Object. While fetching data from third party like this, you are generally provided with more data than you need. Map method ignores everything you don't want to display on the screen. Map method always returns a new array. In map function, one would return any datatype when you are working with lists in JSX. PLease refer to <a href="./mapFunction.js">mapFunction.js</a><br/>
+Javascript map method is used to transform a list, and list is a simple collection of elements (represents an array in javascript). Most common type of an element has in the array is Object. While fetching data from third party like this, you are generally provided with more data than you need. Map method ignores everything you don't want to display on the screen. Map method always returns a new array. In map function, one would return any datatype when you are working with lists in JSX. PLease refer to <a href="./mapFunction">mapFunctions</a><br/>
 
 <b>Things to know about map function in Javascript</b>
 - map() creates a new array from calling a function for every array element.
